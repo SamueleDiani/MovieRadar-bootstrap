@@ -1,0 +1,19 @@
+img {
+  height: 380px;
+}
+
+.film-card:hover {
+  transform: scale(1.03);
+  transition: .3s;
+  cursor: pointer;
+}
+.film-card:hover .card-title {
+  color: goldenrod;
+  transition: .3s;
+}
+
+.film-card {
+  background-color: rgb(51, 65, 85, 0.4); /* nero semi-trasparente */
+  /*backdrop-filter: blur(4px); !* effetto opaco sfocato, opzionale *!*/
+  border: none;
+}
