@@ -1,0 +1,36 @@
+<div class="film-hero position-relative text-white">
+  <div class="background-image" [ngStyle]="{'background-image': 'url(' + film?.locandina + ')'}"></div>
+
+  <div class="container position-relative z-2 pt-5 mt-5">
+    <div class="row g-2 text-center text-md-start ">
+      <!--    Locandina-->
+      <div class="col-md-4 d-flex justify-content-center">
+        <img [src]="film?.locandina" alt="{{ film?.titolo }}" class="poster-img shadow-lg">
+      </div>
+      <!-- Info Film -->
+      <div class="col-md-8 d-flex flex-column justify-content-start">
+        <h1 class="display-5 fw-bold">{{ film?.titolo }}</h1>
+        <div class="d-flex flex-wrap justify-content-center justify-content-md-start align-items-center gap-3 mt-2">
+          <span class="badge bg-success fs-6">{{ film?.valutazione }}/10</span>
+          <span><i class="bi bi-calendar3"></i> {{ film?.anno }}</span>
+          <span><i class="bi bi-clock"></i> {{ film?.durata }} min</span>
+          <span class="badge bg-secondary">{{ film?.genere }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Trama del film -->
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col">
+        <h4 class="mb-3">Trama</h4>
+        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+          eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+          mollit anim id est laborum.</p>
+      </div>
+    </div>
+  </div>
+</div>

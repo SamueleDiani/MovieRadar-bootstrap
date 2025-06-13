@@ -1,1 +1,4 @@
-<app-catalogo-component></app-catalogo-component>
+<!--Componente dei filtri-->
+<app-filtri-component (filtriApplicati)="aggiornaFiltri($event)"></app-filtri-component>
+<!--Componente catalogo dei film-->
+<app-catalogo-component [filtri]="filtriAttivi"></app-catalogo-component>

@@ -1,0 +1,27 @@
+<div class="container my-4 text-white mb-5">
+  <h2 class="mb-3"><span><i class="bi bi-filter"></i></span> Filtri</h2>
+
+  <form class="row g-3 align-items-end">
+<!--    filtro per genere-->
+    <div class="col-md-4">
+      <label for="genere" class="form-label">Genere</label>
+      <select id="genere" class="form-select" [(ngModel)]="filtro.genere" name="genere">
+        <option value="">Tutti</option>
+        @for (g of genrei; track g) {
+          <option [value]="g"> {{ g }}</option>
+        }
+      </select>
+    </div>
+
+    <!-- VALUTAZIONE MINIMA -->
+    <div class="col-md-3">
+      <label for="votoMin" class="form-label">Valutazione minima</label>
+      <input type="number" id="votoMin" min="0" max="10" class="form-control" [(ngModel)]="filtro.valutazioneMin" name="votoMin">
+    </div>
+
+<!--    Bottone applica filtro-->
+    <div class="col-md-2 d-grid">
+      <button type="button" class="btn btn-outline-success" (click)="applicaFiltri()">Filtra</button>
+    </div>
+  </form>
+</div>
