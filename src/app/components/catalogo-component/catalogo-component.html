@@ -1,26 +1,32 @@
 <div class="container my-4">
   <h2 class="text-white mb-3">Catalogo</h2>
-  <div class="row g-4">
-    @for (film of listaFilm; track film.id) {
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-        <a [routerLink]="['/film', film.id]">
 
-          <div class="film-card card position-relative h-100 text-white semi-transparent-card">
-            <img src="{{ film.locandina }}" class="card-img-top" alt="{{ film.titolo }}">
-            <span class="badge bg-success position-absolute top-0 end-0 m-2">{{ film.valutazione }}</span>
+  @if (listaFilm.length < 1) {
+    <app-film-not-found-component></app-film-not-found-component>
+  } @else {
+    <div class="row g-4">
+      @for (film of listaFilm; track film.id) {
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <a [routerLink]="['/film', film.id]" class="text-decoration-none text-reset">
 
-            <div class="card-body d-flex flex-column justify-content-between">
-              <h5 class="card-title">{{ film.titolo }}</h5>
-              <div class="d-flex justify-content-between small">
-                <span> {{ film.anno }}</span>
-                <span class="badge bg-secondary"> {{ film.anno }}</span>
+            <div class="film-card card position-relative h-100 text-white semi-transparent-card">
+              <img src="{{ film.locandina }}" class="card-img-top" alt="{{ film.titolo }}">
+              <span class="badge bg-success position-absolute top-0 end-0 m-2">{{ film.valutazione }}</span>
+
+              <div class="card-body d-flex flex-column justify-content-between">
+                <h5 class="card-title">{{ film.titolo }}</h5>
+                <div class="d-flex justify-content-between small">
+                  <span> {{ film.anno }}</span>
+                  <span class="badge bg-secondary"> {{ film.anno }}</span>
+                </div>
               </div>
             </div>
-          </div>
 
-        </a>
+          </a>
 
-      </div>
-    }
-  </div>
+        </div>
+      }
+    </div>
+  }
+
 </div>

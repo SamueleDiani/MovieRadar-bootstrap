@@ -3,11 +3,13 @@ import {catalogo} from "../../mockData";
 import {FilmServices} from '../../services/FilmServices';
 import {Film} from '../../models/Film';
 import {RouterLink} from '@angular/router';
+import {FilmNotFoundComponent} from '../film-not-found-component/film-not-found-component';
 
 @Component({
   selector: 'app-catalogo-component',
   imports: [
-    RouterLink
+    RouterLink,
+    FilmNotFoundComponent
   ],
   templateUrl: './catalogo-component.html',
   styleUrl: './catalogo-component.css'
