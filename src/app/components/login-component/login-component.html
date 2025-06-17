@@ -1,0 +1,72 @@
+<div class="d-flex justify-content-center align-items-center my-5">
+
+</div>
+<div class="container my-5">
+
+  <ul class="nav nav-pills my-5" id="pills-tab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-login" type="button" role="tab" aria-controls="login" aria-selected="true">Login</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-registration" type="button" role="tab" aria-controls="registration" aria-selected="false">Registration</button>
+    </li>
+  </ul>
+  <div class="tab-content" id="pills-tabContent">
+    <div class="tab-pane fade show active my-4" id="pills-login" role="tabpanel" aria-labelledby="pills-home-tab">
+      <div class="d-flex align-items-center justify-content-between">
+        <div>
+          <form class="text-light mb-4 w-100" >
+            <div class="row g-3 ">
+              <div class="col-12  ">
+                <label for="login-email" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="login-email" placeholder="name@example.com" [(ngModel)]="loginEmail" name="loginEmail" required>
+              </div>
+
+              <div class="col-12 ">
+                <label for="login-password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="login-password" placeholder="password" [(ngModel)]="loginPassword" name="loginPassword" required>
+              </div>
+
+
+            </div>
+          </form>
+          <button class="btn btn-outline-success" (click)="onLogin(loginEmail, loginPassword)">Accedi</button>
+        </div>
+        <img src="/login.png" class="d-none d-md-block ">
+      </div>
+
+
+    </div>
+
+
+    <div class="tab-pane fade my-4" id="pills-registration" role="tabpanel" aria-labelledby="pills-profile-tab">
+      <div class="d-flex align-items-center justify-content-between">
+        <div >
+          <form class="text-light mb-4 w-100" >
+            <div class="row g-3">
+              <div class="col-12 ">
+                <label for="registration-email" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="registration-email" placeholder="name@example.com" [(ngModel)]="registerEmail" name="registerEmail" required>
+              </div>
+
+              <div class="col-12 ">
+                <label for="registration-password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="registration-password" placeholder="password" [(ngModel)]="registerPassword" name="registerPassword" required>
+              </div>
+
+              <div class="col-12 ">
+                <label for="registration-username" class="form-label">Username</label>
+                <input type="text" class="form-control" id="registration-username" placeholder="SickDragon" [(ngModel)]="registerUsername" name="registerUsername" required>
+              </div>
+            </div>
+          </form>
+          <button class="btn btn-outline-success" (click)="onRegister(registerUsername, registerEmail, registerPassword)">Registra</button>
+        </div>
+        <img src="/login.png" class="d-none d-md-block ">
+      </div>
+
+
+    </div>
+  </div>
+
+</div>

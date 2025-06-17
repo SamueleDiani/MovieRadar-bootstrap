@@ -19,7 +19,12 @@
           <a class="nav-link" aria-current="page" >Preferiti</a>
         </li>
       </ul>
-      <button type="button" class="btn btn-outline-secondary ms-lg-4">Login</button>
+      @if (isLoggedIn) {
+        <button type="button" class="btn btn-outline-secondary ms-lg-4" (click)="logout()">Logout</button>
+      } @else {
+        <button type="button" class="btn btn-outline-secondary ms-lg-4" [routerLink]="['login']">Login</button>
+      }
+      
     </div>
   </div>
 </nav>
